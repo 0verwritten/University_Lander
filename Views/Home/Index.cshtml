@@ -2,7 +2,25 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model List<University_Lander.Models.ContactUsModel>
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @foreach (var item in Model)
+    {
+        <p>
+        Email: @foreach(var some in item.Email) {
+            <i>
+                @some
+            </i>
+            }
+        Phone: @foreach(var some in item.PhoneNumber) {
+            <i>
+                @some
+            </i>
+            }
+        </p>
+        <br>
+    }
 </div>

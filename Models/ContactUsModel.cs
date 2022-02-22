@@ -1,19 +1,18 @@
-// using MongoDB.Bson;
-// using MongoDB.Bson.Serialization.Attributes;
-
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace University_Lander.Models
 {
-    public class ContactUs
+    public class ContactUsModel
     {
-        // [BsonId]
-        // [BsonRepresentation(BsonType.ObjectId)]
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
         public string? Id { get; set; }
         public List<string> Email { get; set; }
-        public List<SocialLink> SocialNets { get; set; }
+        // public List<SocialLink> SocialNets { get; set; }
         public List<string> PhoneNumber { get; set; }
 
-        public LocationAddress Location;
+        // public LocationAddress Location;
     }
 
     public class SocialLink{

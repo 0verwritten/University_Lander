@@ -1,4 +1,16 @@
+using University_Lander.Models;
+using University_Lander.Services;
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<DatabaseConfiguration>(
+    builder.Configuration.GetSection("SiteTestDatabase"));
+
+builder.Services.AddSingleton<DatabaseService>();
+
+builder.Services.Configure<DatabaseConfiguration>(
+    builder.Configuration.GetSection("SiteTestDatabase1"));
+
+builder.Services.AddSingleton<DatabaseService2>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
